@@ -61,7 +61,7 @@ function App() {
       const base64Image = await toBase64(drugImageFile);
       const mimeType = drugImageFile.type;
 
-      const response = await fetch('http://localhost:5001/api/identify', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/identify`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,7 +101,7 @@ function App() {
       const base64PrescriptionImage = await toBase64(prescriptionImageFile);
       const prescriptionMimeType = prescriptionImageFile.type;
 
-      const response = await fetch('http://localhost:5001/api/verify', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/verify`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
